@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+<head><title>Add Employee</title></head>
+<body>
+    <h1>Add New Employee</h1>
+    <form action="/add" method="post">
+        <label>
+            <input type="number" name="employee_id" placeholder="ID" required>
+        </label><br>
+        <label>
+            <input type="text" name="full_name" placeholder="Full Name" required>
+        </label><br>
+        <label>
+            <input type="number" name="age" placeholder="Age" required>
+        </label><br>
+        <label>
+            <select name="department" required>
+                {% for dept in departments %}
+                    <option value = "{{dept}}">{{dept}}</option>
+                {% endfor %}
+            </select>
+        </label><br>
+        <button type="submit">Add</button>
+    </form>
+    <button onclick="location.href='/'">Back</button>
+</body>
+</html>

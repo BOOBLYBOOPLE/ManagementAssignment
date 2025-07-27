@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>View Employees</title>
+</head>
+<body>
+    <h1>View Employees</h1>
+
+    <form method="get" action="/employees">
+        <label>Search by Employee ID:</label>
+      <label>
+        <input type="number" name="employee_id" placeholder="Leave empty for all">
+      </label>
+      <button type="submit">Search</button>
+    </form>
+
+    <hr>
+
+    {% if employees %}
+        <ul>
+        {% for emp in employees %}
+            <li>{{ emp.employee_id }} - {{ emp.full_name }} ({{ emp.department }})</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No employee(s) found.</p>
+    {% endif %}
+
+    <button onclick="location.href='/'">Back</button>
+</body>
+</html>

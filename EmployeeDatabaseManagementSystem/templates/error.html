@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <h2 style="color: red;">An Error Occurred</h2>
+    <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <button onclick="location.href='/'">Return to Homepage</button>
+</body>
+</html>

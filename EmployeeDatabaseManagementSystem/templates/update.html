@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+<head><title>Update Employee</title></head>
+<body>
+    <h1>Update Employee</h1>
+    <form action="/update" method="post" onsubmit="return confirm('Are you sure you want to update this employee?');">
+      <label>
+        <input type="number" name="employee_id" placeholder="Current ID" required>
+      </label><br>
+      <label>
+        <input type="number" name="new_id" placeholder="New ID" required>
+      </label><br>
+      <label>
+        <input type="text" name="full_name" placeholder="Full Name" required>
+      </label><br>
+      <label>
+        <input type="number" name="age" placeholder="Age" required>
+      </label><br>
+      <label>
+        <select name="department" required>
+                {% for dept in departments %}
+                    <option value = "{{dept}}">{{dept}}</option>
+                {% endfor %}
+        </select>
+      </label><br>
+        <button type="submit">Update</button>
+    </form>
+    <button onclick="location.href='/'">Back</button>
+</body>
+</html>
