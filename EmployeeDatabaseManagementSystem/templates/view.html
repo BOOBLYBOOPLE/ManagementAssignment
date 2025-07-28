@@ -19,7 +19,7 @@
     {% if employees %}
         <ul>
         {% for emp in employees %}
-            <li>{{ emp.employee_id }} - {{ emp.full_name }} ({{ emp.department }})</li>
+            <li>{{ emp.employee_id }} - {{ emp.full_name }}, {{emp.age}}yrs old; ({{ emp.department }})</li>
         {% endfor %}
         </ul>
     {% else %}

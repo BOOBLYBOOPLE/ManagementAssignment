@@ -51,14 +51,14 @@ class Employee(BaseModel):
             raise ValueError("Length of name invalid, please enter full name")
         if not name.replace(" ", "").isalpha():
             raise ValueError("Name must contain only letters")
-        if name == name[0] * len(name):
+        if name == name[0] + name[1] * len(name):
             raise ValueError("Repeating and duplicate values detected")
         return name
 
     #Validating departments according to a pre-determined list
     @field_validator("department")
     def validate_department(cls, department):
-        if department not in List_of_Departments:
+        if str(department).lower() not in List_of_Departments.__str__().lower():
             raise ValueError("Invalid Department, choose from {}".format(List_of_Departments))
         return department.title()
 
